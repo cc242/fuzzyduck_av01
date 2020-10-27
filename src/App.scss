@@ -1,0 +1,30 @@
+@import "scss/reset";
+@import "scss/mixins";
+@import "scss/media-queries";
+@import "scss/theme";
+@import "scss/fonts";
+@import "scss/layout";
+@import "scss/ui";
+body {
+  display: flex;
+  justify-content: center;
+  background: #a19e9e;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+#root {
+  @include flexCenter;
+  height: 100%;
+  width: 100%;
+  .layout {
+    position: relative;
+    background-color: #fff;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    //background-image: url("./assets/bg.svg");
+    background-repeat: no-repeat;
+    background-size: 590px 677px;
+    background-position-y: -19px;
+  }
+}

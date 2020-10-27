@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  /*.ui {
+    flex: 1 0 25%;
+  }
+  .page {
+    flex: 1 0 75%;
+  }*/
+}

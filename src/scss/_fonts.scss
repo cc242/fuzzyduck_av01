@@ -1,0 +1,247 @@
+@import url('https://use.typekit.net/gsv6jfn.css');
+/**
+from adobe
+Myriad Pro Bold
+
+font-family: myriad-pro, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+
+
+Myriad Pro Bold Italic
+
+font-family: myriad-pro, sans-serif;
+
+font-weight: 700;
+
+font-style: italic;
+
+
+Myriad Pro Italic
+
+font-family: myriad-pro, sans-serif;
+
+font-weight: 400;
+
+font-style: italic;
+
+
+Myriad Pro Light
+
+font-family: myriad-pro, sans-serif;
+
+font-weight: 300;
+
+font-style: normal;
+
+
+Myriad Pro Regular
+
+font-family: myriad-pro, sans-serif;
+
+font-weight: 400;
+
+font-style: normal;
+
+
+Myriad Pro Semibold
+
+font-family: myriad-pro, sans-serif;
+
+font-weight: 600;
+
+font-style: normal;
+
+
+Myriad Pro Bold Condensed
+
+font-family: myriad-pro-condensed, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+
+
+Myriad Pro Condensed
+
+font-family: myriad-pro-condensed, sans-serif;
+
+font-weight: 400;
+
+font-style: normal;
+
+
+Myriad Pro Bold Condensed Italic
+
+font-family: myriad-pro-condensed, sans-serif;
+
+font-weight: 700;
+
+font-style: italic;
+
+
+Myriad Pro Condensed Italic
+
+font-family: myriad-pro-condensed, sans-serif;
+
+font-weight: 400;
+
+font-style: italic;
+
+
+Myriad Pro Bold SemiCondensed
+
+font-family: myriad-pro-semi-condensed, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+
+
+Myriad Pro SemiCondensed
+
+font-family: myriad-pro-semi-condensed, sans-serif;
+
+font-weight: 400;
+
+font-style: normal;
+
+
+Myriad Pro SemiCondensed Italic
+
+font-family: myriad-pro-semi-condensed, sans-serif;
+
+font-weight: 400;
+
+font-style: italic;
+
+
+Myriad Pro Bold SemiCondensed Italic
+
+font-family: myriad-pro-semi-condensed, sans-serif;
+
+font-weight: 700;
+
+font-style: italic;
+
+
+Myriad Pro SemiExtended Italic
+
+font-family: myriad-pro-semiextended, sans-serif;
+
+font-weight: 400;
+
+font-style: italic;
+
+
+Myriad Pro SemiExtended
+
+font-family: myriad-pro-semiextended, sans-serif;
+
+font-weight: 400;
+
+font-style: normal;
+
+
+Myriad Pro Bold SemiExtended Italic
+
+font-family: myriad-pro-semiextended, sans-serif;
+
+font-weight: 700;
+
+font-style: italic;
+
+
+Myriad Pro Bold SemiExtended
+
+font-family: myriad-pro-semiextended, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+ */
+* {
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4 {
+  -webkit-font-smoothing: antialiased;
+}
+
+$bp-desktop: 1280px;
+$bp-tablet: 768px;
+$bp-mobile: 480px;
+
+$breakpoints: (
+        small : $bp-mobile,
+        medium: $bp-tablet,
+        large : $bp-desktop,
+);
+$body-font-sizes: (
+        null: 10px,
+        small: 10px,
+        medium: 14px,
+        large: 16px
+);
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+@mixin pxtorem($size) {
+  font-size: calculateRem($size);
+}
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    @include pxtorem(nth($fs-font-size, 1));
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    @include pxtorem($fs-font-size);
+  }
+}
+html {
+  @include font-size($body-font-sizes);
+}
+body, button, p {
+  font-family: myriad-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #4d4d4f;
+}
+h1, h2 {
+  font-family: myriad-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: calculateRem(40px);
+}
+.title {
+  font-family: printf, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+i {
+  font-style:italic;
+}

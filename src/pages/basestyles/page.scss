@@ -1,0 +1,12 @@
+@import "../../scss/mixins";
+.page {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  .container {
+   height: 100%;
+    @include flexCenter;
+  }
+}
