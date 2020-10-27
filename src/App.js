@@ -6,10 +6,11 @@ import {useHistory} from "react-router-dom";
 import {getAppData} from "./utils/getAppData";
 import appReducer from "./reducers/AppReducer";
 import HomePage from "./pages/HomePage/HomePage";
-import Names from "./pages/Names/Names";
 import Stories from "./pages/Stories/Stories";
-import './App.scss';
 import Header from "./pages/Components/Header/Header";
+import Names from "./pages/Names/Names";
+import Memorial from "./pages/Memorial/Memorial";
+import './App.scss';
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, {});
@@ -19,11 +20,6 @@ function App() {
     async function get() {
       /**
        * Get medal stories
-       */
-      let medals= await getAppData(`medal_story`);
-      dispatch({type: DATA_STORIES, data: medals});
-      /**
-       * get memorial names
        */
       let names = await getAppData(`pages/73&_embed&per_page=1000`);
       dispatch({type: DATA_NAMES, data: names});
@@ -47,6 +43,7 @@ function App() {
             <Route path="/app.html" component={HomePage} exact />
             <Route path="/names" component={Names} exact />
             <Route path="/stories" component={Stories} exact />
+            <Route path="/memorial" component={Memorial} exact />
           </Switch>
         </AppContext.Provider>
       </div>

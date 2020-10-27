@@ -1,0 +1,92 @@
+@import "../../../scss/mixins";
+@import "../../basestyles/page";
+.memorial {
+  height: 100%;
+  display: flex;
+  background-color: #e2343f;
+  flex-direction: row !important;
+  h1, h2, p {
+    color: #fff;
+  }
+  h1 {
+    font-size: 61px;
+  }
+  h2 {
+    font-family: myriad-pro;
+    font-weight: lighter;
+    font-size: 61px;
+    margin-bottom: 40px;
+  }
+  p {
+    font-family: myriad-pro;
+    font-weight: lighter;
+    font-size: 23px;
+    margin-bottom: 70px;
+  }
+  &__left {
+    @include flexCenter;
+    width: 45%;
+    flex-direction: column !important;
+  }
+  &__right {
+    @include flexCenter;
+    width: 55%;
+    background-color: #ffffff;
+  }
+}
+.memorial-letters {
+  width: 533px;
+  transform: translateY(-38px);
+  &__letters {
+    display: grid;
+    row-gap: 24px;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  &__letter {
+    width: 55px;
+    height: 55px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    transition: 0.2s all;
+    &--active {
+      background-color: #000;
+      color: #fff;
+      transition: 0.2s all;
+    }
+  }
+}
+.results {
+  color: #000;
+  display: grid;
+  row-gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 700px;
+  &__result {
+    font-weight: 400;
+    font-size: 24px;
+    margin-left: 42px;
+    &--featured {
+      color: #e2343f;
+      position: relative;
+      &::before {
+        content: '★';
+        position: absolute;
+        left: -34px;
+        font-size: 32px;
+        top: -6px;
+      }
+    }
+  }
+}
+.ScrollbarsCustom-Thumb {
+  background-color: #e2343f !important;
+}
+.ScrollbarsCustom-Track {
+  width: 5px;
+}

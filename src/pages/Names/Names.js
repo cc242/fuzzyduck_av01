@@ -3,25 +3,27 @@ import {Link, Route, useHistory} from "react-router-dom";
 import Page from "../Page";
 import './styles/styles.scss';
 import {AppContext} from "../../context/AppContext";
-import HomePage from "../HomePage/HomePage";
-import {getAppData} from "../../utils/getAppData";
 const Names = () => {
     const history = useHistory();
     const {state, dispatch} = useContext(AppContext);
-
     const [names, setNames] = useState([]);
 
     useEffect(()=> {
 
     }, [])
 
+    const memorial = ()=> {
+        history.push('/memorial');
+    }
 
     return (
-        <Page>
-            <h1>Memorial Board</h1>
-            <Link to="/stories">Stories</Link>
-            <h1>Names</h1>
-
+        <Page class="names">
+            <div className="names__panel">
+                <div className="names__button" onClick={memorial}>MEMORIAL BOARD</div>
+            </div>
+            <div className="names__panel">
+                <div className="names__button">FEATURED STORIES</div>
+            </div>
         </Page>
     )
 }
