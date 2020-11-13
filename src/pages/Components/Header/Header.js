@@ -5,9 +5,8 @@ const Header = ()=> {
 
     return (
         <div className="header">
+            <div className="header__bg"></div>
             <div className="header__home"></div>
-            <Link to="/names">Names</Link>
-            <Link to="/stories">Stories</Link>
         </div>
     )
 }

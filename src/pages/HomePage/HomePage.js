@@ -9,9 +9,9 @@ const HomePage = () => {
 
 
     return (
-        <Page>
-            <h1>Home</h1>
-            <Link to="/memorialboard">Memorial Board</Link>
+        <Page class="home">
+            <Link to="/names">Names</Link>
+            <Link to="/stories">Stories</Link>
         </Page>
     )
 }

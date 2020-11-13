@@ -1,28 +1,32 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Link, Route, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import Page from "../Page";
 import './styles/styles.scss';
-import {AppContext} from "../../context/AppContext";
+import imgMemorial from "./assets/memorial_image.svg";
+import featuredImage from "./assets/Group 61@2x.png";
 const Names = () => {
     const history = useHistory();
-    const {state, dispatch} = useContext(AppContext);
-    const [names, setNames] = useState([]);
-
-    useEffect(()=> {
-
-    }, [])
 
     const memorial = ()=> {
         history.push('/memorial');
+    }
+    const featured = ()=> {
+        history.push('/featuredstories');
     }
 
     return (
         <Page class="names">
             <div className="names__panel">
-                <div className="names__button" onClick={memorial}>MEMORIAL BOARD</div>
+                <div className="names__button" onClick={memorial}>
+                    <img src={imgMemorial}/>
+                    <div className="names__button__label">MEMORIAL BOARD<br/><span>Full list of names</span></div>
+                </div>
             </div>
             <div className="names__panel">
-                <div className="names__button">FEATURED STORIES</div>
+                <div className="names__button" onClick={featured}>
+                    <img className="featuredImage" src={featuredImage}/>
+                    <div className="names__button__label">FEATURED STORIES</div>
+                </div>
             </div>
         </Page>
     )
