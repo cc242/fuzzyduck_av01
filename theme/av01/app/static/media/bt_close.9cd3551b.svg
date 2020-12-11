@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="57" height="56" viewBox="0 0 57 56">
+    <defs>
+        <style>.sa{opacity:0;}.sb{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:4px;}</style>
+    </defs>
+    <g transform="translate(-3835.952 -4595)">
+        <path class="sa" d="M0,0H57V56H0Z" transform="translate(3835.952 4595)"/>
+        <g transform="translate(3848.198 4623.429) rotate(-45)">
+            <line class="sb" y2="23.355" transform="translate(11.678 0)"/>
+            <line class="sb" x1="23.355" transform="translate(0 11.678)"/>
+        </g>
+    </g>
+</svg>

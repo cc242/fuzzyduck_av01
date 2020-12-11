@@ -8,6 +8,7 @@
   background-color: #ffffff;
   &__left {
     width: 250px;
+    position: relative;
   }
   &__mid {
     width: 750px;
@@ -137,4 +138,13 @@
     background: #000;
     color: #fff;
   }
+}
+.bt_back {
+  position: absolute;
+  top: -66px;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
 }

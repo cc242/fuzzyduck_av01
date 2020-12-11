@@ -22,13 +22,13 @@ const FeaturedStories = memo(props => {
                     {state.featuredNames && state.featuredNames.length ? (
                             state.featuredNames.map((e, i) => (
                                 <div key={i} className="featured_result" onClick={() => {openFeatured(e.featured_story.ID)}}>
-                                    <div className="featured_result__image">
+                                    {/*<div className="featured_result__image">
                                         {e.photo ? (
                                             <img src={e.photo.sizes.medium_large}/>
                                         ) : (<></>)}
-                                    </div>
+                                    </div>*/}
                                     <div className="featured_result__copy">
-                                        <div className="featured_result__name">{e.firstname} {e.surname}</div>
+                                        <div className="featured_result__name">{e.surname}, {e.initials}</div>
                                         {e.rank ? (
                                             <p><span className="bold">Rank: </span>{e.rank}</p>
                                         ) : (<></>)}

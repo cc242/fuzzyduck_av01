@@ -5,7 +5,7 @@ export const getAppData = async (url) => {
     } else {
         path = process.env.REACT_APP_API_PROD;
     }
-    let response = await fetch(`${path}/?rest_route=/wp/v2/${url}`);
+    let response = await fetch(`${path}/?rest_route=/wp/v2/${url}&per_page=100`);
     // let response = await fetch(`${path}/?rest_route=/wp/v2/av02_1&_embed`);
     const res = await response.json();
     return res;

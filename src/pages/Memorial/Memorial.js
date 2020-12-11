@@ -62,6 +62,7 @@ const Memorial = memo(props => {
     const Letter = memo(props => {
         return (
             <div
+                data-id={props.i}
                 className= { `memorial-letters__letter ${active === props.i ? "memorial-letters__letter--active" : ""}` }
                 onClick={()=> filter(props.e, props.i)}
             >{props.e}</div>

@@ -82,6 +82,7 @@
   grid-template-columns: repeat(3, 1fr);
   width: 770px;
   opacity: 0;
+  padding-bottom: 110px;
   &__result {
     font-weight: 700;
     font-size: 24px;
@@ -162,7 +163,7 @@
   }
   p {
     margin-bottom: 10px !important;
-    font-size: 23px;
+    font-size: 26px;
   }
   h1, p {
     color: #000000;
@@ -182,4 +183,18 @@
       height: auto !important;
     }
   }
+}
+[data-id='20'] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+[data-id='25'] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+[data-id='23'] {
+  opacity: 0.4;
+  pointer-events: none;
 }

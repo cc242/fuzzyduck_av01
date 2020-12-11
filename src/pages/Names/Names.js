@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import Page from "../Page";
 import './styles/styles.scss';
-import imgMemorial from "./assets/memorial_image.svg";
+import imgMemorial from "./assets/memorial_image.png";
 import featuredImage from "./assets/Group 61@2x.png";
 const Names = () => {
     const history = useHistory();
@@ -18,7 +18,7 @@ const Names = () => {
         <Page class="names">
             <div className="names__panel">
                 <div className="names__button" onClick={memorial}>
-                    <img src={imgMemorial}/>
+                    <img src={imgMemorial} className="memorial_image"/>
                     <div className="names__button__label">MEMORIAL BOARD<br/><span>Full list of names</span></div>
                 </div>
             </div>

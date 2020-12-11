@@ -1,0 +1,26 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"scss/style.scss",
+		"scss/global/_global.scss",
+		"scss/global/_reset.scss",
+		"scss/global/_var.scss",
+		"scss/global/_fonts.scss",
+		"scss/components/_btn.scss",
+		"scss/components/_nav.scss",
+		"scss/components/_form.scss"
+	],
+	"sourcesContent": [
+		"/*\nTheme Name: WP-Starter-Theme\nTheme URI: http://rpj-dev.com/projects/wp-starter-theme/\nAuthor: Rhys P. Judd \nAuthor URI: http://rpj-dev.com/\nVersion: 1.0\nLicense: GNU General Public License v2 or later\nLicense URI: http://www.gnu.org/licenses/gpl-2.0.html\n*/\n\n// Global\n@import 'global/_global';\n@import 'global/_reset';\n@import 'global/_var';\n@import 'global/_fonts';\n\n// Components\n@import 'components/_btn';\n@import 'components/_nav';\n@import 'components/_form';\n",
+		"* { \n    box-sizing: border-box;\n    margin: 0;\n    padding: 0;\n }\n\nbody {\n    width: 100vw;\n    height: 100vh;\n}\n\nsection {\n    width: 100%;\n\n}\n\nul {\n    padding: 0;\n}",
+		"",
+		"",
+		"",
+		"",
+		"",
+		""
+	],
+	"names": [],
+	"mappings": "AAAA;;;;;;;;EAQE;;ACRF,AAAA,CAAC,CAAC;EACE,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACZ;;;AAEF,AAAA,IAAI,CAAC;EACD,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CAChB;;;AAED,AAAA,OAAO,CAAC;EACJ,KAAK,EAAE,IAAI;CAEd;;;AAED,AAAA,EAAE,CAAC;EACC,OAAO,EAAE,CAAC;CACb"
+}

@@ -15,6 +15,7 @@ import blankImage from "./assets/blank_profile@2x.png";
 
 const Story = () => {
     const {state} = useContext(AppContext);
+    const history = useHistory();
     const {id} = useParams();
     const [story, setStory] = useState()
     const [person, setPerson] = useState()
@@ -65,12 +66,16 @@ const Story = () => {
         select_objects.current.classList.add('image_select--active')
         select_medals.current.classList.remove('image_select--active')
     }
+    const onBack = ()=> {
+        history.goBack()
+    }
 
     return (
         <Page class="story">
             {story ? (
                 <>
                     <div className="story__left">
+                        <div className="bt_back" onClick={onBack}>Back</div>
                         <h1>Featured stories</h1>
                         <div className="featured_result__image">
                             <img src={blankImage} />
