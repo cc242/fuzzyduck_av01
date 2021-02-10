@@ -28,7 +28,7 @@ const FeaturedStories = memo(props => {
                                         ) : (<></>)}
                                     </div>*/}
                                     <div className="featured_result__copy">
-                                        <div className="featured_result__name">{e.surname}, {e.initials}</div>
+                                        <div className="featured_result__name">{e.surname.length ? e.surname+',' : ''} {e.initials}</div>
                                         {e.rank ? (
                                             <p><span className="bold">Rank: </span>{e.rank}</p>
                                         ) : (<></>)}

@@ -51,7 +51,7 @@ const Memorial = memo(props => {
         const startsWithLetter = (entry) => entry.surname.substring(0,1) === e;
         let newNames = state.names.filter(startsWithLetter);
 
-        console.log('newnames', newNames);
+        //console.log('newnames', newNames);
 
 
         setFilteredNames(newNames);

@@ -121,6 +121,17 @@
     right: 28px;
     opacity: 0;
   }
+  &__credit {
+    padding: 0 20px;
+    bottom: 0px;
+    transform: translateY(23%);
+    right: -9px;
+    width: 758px;
+    position: absolute;
+    p {
+      margin: 0;
+    }
+  }
 }
 .image_select {
   position: absolute;
@@ -131,6 +142,9 @@
   justify-content: space-between;
   border: 2px solid #000;
   border-radius: 10px;
+  &__medals {
+    right: 320px;
+  }
   &__item {
     padding: 10px 30px;
   }

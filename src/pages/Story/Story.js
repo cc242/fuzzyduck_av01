@@ -42,29 +42,48 @@ const Story = () => {
 
             //let idx = getIndexByKeyValue(state.featured, 'id', parseInt(id));
            let tempMedals = [];
-           medals.forEach(medal => {
-               let idx = getIndexByKeyValue(state.medals, 'id', parseInt(medal.ID));
-
-               if ( state.medals[idx].images) {
-                   tempMedals.push( state.medals[idx].images)
+           if (medals) {
+               medals.forEach(medal => {
+                   let idx = getIndexByKeyValue(state.medals, 'id', parseInt(medal.ID));
+                   if (state.medals[idx].images) {
+                       tempMedals.push({url: state.medals[idx].images, credit: state.medals[idx].image_credit})
+                   }
+               })
+               setDisplaymedals(tempMedals)
+           } else {
+               console.log('', story);
+               if (story && story.other_objects) {
+                   showObjects();
                }
-           })
-            setDisplaymedals(tempMedals)
+           }
         }
     }, [state.featured, id]);
+
+    useEffect(()=> {
+        console.log('', story);
+        if (displaymedals) {
+
+        } else {
+            console.log('', story);
+            if (story && story.other_objects) {
+                showObjects();
+            }
+        }
+    }, [story])
 
     const showMedals = ()=> {
         gsap.set('.images__objects', {autoAlpha: 0})
         gsap.set('.images__medal', {autoAlpha: 1});
         select_medals.current.classList.add('image_select--active')
-        select_objects.current.classList.remove('image_select--active')
-
+        if (select_objects.current) {
+            select_objects.current.classList.remove('image_select--active')
+        }
     }
     const showObjects = ()=> {
         gsap.set('.images__objects', {autoAlpha: 1})
-        gsap.set('.images__medal', {autoAlpha: 0})
+        gsap.set('.images__medal', {autoAlpha: 0});
         select_objects.current.classList.add('image_select--active')
-        select_medals.current.classList.remove('image_select--active')
+        select_medals.current && select_medals.current.classList.remove('image_select--active')
     }
     const onBack = ()=> {
         history.goBack()
@@ -126,17 +145,25 @@ const Story = () => {
 
                     </div>
                     <div className="story__right">
-                        <div className="image_select">
-                            <div ref={select_medals} className="image_select__item image_select__left image_select--active" onClick={showMedals}>medals</div>
-                            <div ref={select_objects} className="image_select__item image_select__right" onClick={showObjects}>objects</div>
+                        <div className={`image_select ${!story.other_objects.length ? 'image_select__medals' : ''}`}>
+                            {
+                                displaymedals ?
+                                    <div ref={select_medals} className="image_select__item image_select__left image_select--active" onClick={showMedals}>medals</div>
+                                    : null
+                            }
+                            {
+                                story.other_objects.length ?
+                                    <div ref={select_objects} className="image_select__item image_select__right" onClick={showObjects}>objects</div>
+                                    : null
+                            }
                         </div>
                         <div className="images">
                             <div className="images__medal">
                                 {displaymedals && displaymedals.length ?
                                     displaymedals.map((e, i) => (
-                                        <img key={i} src={e} />
+                                        <img key={i} src={e.url} />
                                     ))
-                                : <></>
+                                : null
                                 }
                             </div>
                             <div className="images__objects">
@@ -152,6 +179,17 @@ const Story = () => {
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
+                            </div>
+                            <div className="images__credit">
+                                {displaymedals && displaymedals.length ?
+                                    displaymedals.map((e, i) => (
+                                        <p key={i}>{e.credit}</p>
+                                    ))
+                                    : null
+                                }
+                                {story.other_objects && story.other_objects.map((e, i) => (
+                                    <p key={i}>{e.description}</p>
+                                ))}
                             </div>
                         </div>
                     </div>

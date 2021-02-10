@@ -25,7 +25,7 @@ function App() {
         /**
          * This gets the data from the db, replaced with local file 'data.js'
          */
-        /*let allNames = [];
+       /* let allNames = [];
         for (let i=0; i<13; i++) {
           const files = await getAppData(`person&page=${i+1}&per_page=100`);
           allNames = [...allNames, ...files];
@@ -33,6 +33,7 @@ function App() {
         dispatch({type: DATA_NAMES, data: allNames});
         console.log('', allNames);*/
         dispatch({type: DATA_NAMES, data: cachedData.reverse()});
+
 
         /**
          * Get medals
