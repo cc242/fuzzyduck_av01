@@ -36,7 +36,7 @@ const FeaturedStories = memo(props => {
                                             <p><span className="bold">Date of death: </span>{e.date_of_death}</p>
                                         ) : (<></>)}
                                         {e.buried_memorialised ? (
-                                            <p><span className="bold">Buried/memorialised: </span>{e.buried_memorialised}</p>
+                                            <p><span className="bold">Grave/Memorial: </span>{e.buried_memorialised}</p>
                                         ) : (<></>)}
                                         {e.next_of_kin ? (
                                             <p><span className="bold">Next of kin: </span>{e.next_of_kin}</p>

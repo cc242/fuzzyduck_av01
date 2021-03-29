@@ -9821,6 +9821,11 @@ react-id-swiper@^4.0.0:
   dependencies:
     object-assign "^4.1.1"
 
+react-idle-timer@^4.5.6:
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/react-idle-timer/-/react-idle-timer-4.5.6.tgz#b3c541ba0526220f71f5820a81c0e1b2c55b0e73"
+  integrity sha512-7+sdN78SWu2vZpQsPWDbrgfZWkSqzzXeq5/bC3wvlRLj6xVTA1fA+8Qy0vJmNONz5UXu8Ymrj6rn6DFhcxgssg==
+
 react-indiana-drag-scroll@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/react-indiana-drag-scroll/-/react-indiana-drag-scroll-1.6.1.tgz#9b1838b03ae5eea38cf35fc1da22030cc1c061a1"

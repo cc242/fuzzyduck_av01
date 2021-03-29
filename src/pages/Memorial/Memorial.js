@@ -155,7 +155,7 @@ const Memorial = memo(props => {
                             <p><span className="bold">Born: </span>{selected.born}</p>
                         ) : (<></>)}
                         {selected && selected.buried ? (
-                            <p><span className="bold">Buried/memorialised: </span>{selected.buried}
+                            <p><span className="bold">Grave/Memorial: </span>{selected.buried}
                                 {selected.grave_reference ? ` / ${selected.grave_reference}` : ''}
                             </p>
                         ) : (<></>)}

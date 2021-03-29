@@ -120,7 +120,7 @@ const Story = () => {
                                     </p>
                                 ) : (<></>)}
                                 {person && person.buried ? (
-                                    <p><span className="bold">Buried/memorialised: </span>{person.buried}</p>
+                                    <p><span className="bold">Grave/Memorial: </span>{person.buried}</p>
                                 ) : (<></>)}
                                 {person && person.next_of_kin ? (
                                     <p><span className="bold">Next of kin: </span>{person.next_of_kin}</p>

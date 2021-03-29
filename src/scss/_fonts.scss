@@ -1,4 +1,16 @@
 @import url('https://use.typekit.net/gsv6jfn.css');
+@font-face {
+  font-family: 'myriad-pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local('myriad-pro'), url('fonts/myriad.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Alice';
+  src: url('./fonts/Alice-Regular.ttf') format('truetype');
+  font-style: normal;
+}
 /**
 from adobe
 Myriad Pro Bold
