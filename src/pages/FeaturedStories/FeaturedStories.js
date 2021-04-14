@@ -56,7 +56,7 @@ const FeaturedStories = memo(props => {
 
     return (
         <Page class="featured">
-            <div className="featured__left">#
+            <div className="featured__left">
                 <div className="featured__copy">
                 <h1>Featured<br/>stories</h1>
                 </div>

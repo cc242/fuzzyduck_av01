@@ -29,11 +29,10 @@ function App() {
   }
 
   const handleOnAction = (e) => {
-    console.log('user did something', e)
+    // console.log('user did something', e)
   }
   const { getRemainingTime, getLastActiveTime, reset } = useIdleTimer({
-    timeout: 10000,
-    // timeout: 120000,
+    timeout: 120000,
     onIdle: handleOnIdle,
     onActive: handleOnActive,
     onAction: handleOnAction,
@@ -43,20 +42,8 @@ function App() {
   useEffect(() => {
     async function get() {
 
-
       async function getNames () {
-        /**
-         * This gets the data from the db, replaced with local file 'data.js'
-         */
-        /*let allNames = [];
-        for (let i=0; i<13; i++) {
-          const files = await getAppData(`person&page=${i+1}&per_page=100`);
-          allNames = [...allNames, ...files];
-        }*/
-        // dispatch({type: DATA_NAMES, data: allNames});
-        //dispatch({type: DATA_NAMES, data: cachedData.reverse()});
-        // console.log('', allNames);
-        console.log('new');
+
         const people = await getPeople();
         dispatch({type: DATA_NAMES, data: people['people']});
         /**
